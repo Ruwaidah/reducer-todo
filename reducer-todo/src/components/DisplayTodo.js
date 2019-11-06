@@ -3,16 +3,24 @@ import React, { useEffect,useState } from 'react'
 
 
 export default function DisplayTodo(props) {
-    
+    // console.log(props.toggle)
 
-    const [item, setItem] = useState(props.todoList)
+    const [item, setItem] = useState(false)
     console.log(item)
 
-    return <div onClick = {() => setItem({...item, completed: !(item.completed)})}
-                className = {`item ${item.completed}` }
+
+    const toggle = () => {
+        props.toggle({type: 'ONTOGGLE', payload: props.todoList.id})
+        setItem(!(item))
+
+    }
+    if (props.index == 0)
+        return null
+
+
+    return <div onClick = {toggle}
+                className = {`item ${item}` }
                >
-                <p>{props.todoList.item}</p>
+                <h1>{props.index} - {props.todoList.item}</h1>
            </div>
-
-
             }

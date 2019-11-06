@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  margin: 10px;
+  padding: 20px;
+  background: #222222;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -19,4 +23,59 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+input {
+  font-size: 25px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: rgb(252, 236, 207);
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 150px;
+  height: 40px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  background: rgb(252, 236, 207);
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: palegoldenrod;
+}
+
+.allitem {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  min-width: 300px;
+  text-align: start;
+  /* text-align: center; */
+  margin: 0 auto;
+}
+
+.item  h1 {
+  font-size: 30px;
+  color:rgb(252, 236, 207); ;
+
+}
+
+.true {
+  text-decoration: line-through;
+  text-decoration-color: rgb(255, 0, 0);
+  text-decoration-style: wavy;
 }

@@ -7,6 +7,7 @@ import { initial, reducer } from './reducers/reducer'
 
 
 function App() {
+  const [toggleclas, settoggleclas] = useState(false)
   const [state, dispatch] = useReducer(reducer, [{
     item: '',
     completed: false,
@@ -19,24 +20,32 @@ console.log(state)
 //   setnewdata(state)
 // },[state])
 
-const toggle = (todo) => {
-  state.map((item) => {
-    if (item.id === todo) 
-      item.completed = !(item.completed)
-})
-}
+// const toggle = (todo) => {
+//   state.map((item) => {
+//     if (item.id === todo) {
+//       return item.completed = !(item.completed)
+//       settoggleclas(!(item.completed))
+//     }
+// })
+// }
 
+// state.map((item) => {
+//           if (item.id === action.payload) 
+//           return  item.completed = !(item.completed)
+//       })
 
   return (
       <div className="App">
         <TodoForm onChange = {dispatch} onSubmit = {dispatch} onClear = {dispatch} />
-
-        {state.map((item )=> 
-        <DisplayTodo key = {item.id} 
-                  // ontoggle = {toggle} 
-                  todoList=  {item} 
-        /> )}
-        
+        <div className = "allitem">
+          {state.map((item,index )=> 
+          <DisplayTodo key = {item.id} 
+                    // ontoggle = {toggle} 
+                    todoList=  {item} 
+                    toggle = {dispatch} 
+                    index = {index}
+          /> )}
+        </div>
         {/* <button>Clear</button> */}
       </div>
   );

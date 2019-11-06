@@ -16,6 +16,7 @@ export const reducer = (state, action) => {
     switch(action.type) {
 
         case 'ONCLEAR' :
+            console.log(state)
             return state.filter(item => item.completed === false)
 
         case 'ADDTODO' :
@@ -24,11 +25,12 @@ export const reducer = (state, action) => {
                 return state
             return ([...state,{ ...newtodo}])
              
-        // case 'ONTOGGLE' :
-        //      state.map((item) => {
-        //         if (item.id === action.payload) 
-        //         return  item.completed = !(item.completed)
-        //     })
+        case 'ONTOGGLE' :
+            console.log(action.payload)
+             state.map((item) => {
+                if (item.id === action.payload) 
+                return  item.completed = !(item.completed)
+            })
 
         default :
             return state

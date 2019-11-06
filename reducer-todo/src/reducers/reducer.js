@@ -11,6 +11,7 @@ export const initial  = {
 
 
 export const reducer = (state, action) => {
+    console.log("test")
 
     switch(action.type) {
 
@@ -23,11 +24,11 @@ export const reducer = (state, action) => {
                 return state
             return ([...state,{ ...newtodo}])
              
-        case 'ONTOGGLE' :
-             state.map((item) => {
-                if (item.id === action.payload) 
-                return  item.completed = !(item.completed)
-            })
+        // case 'ONTOGGLE' :
+        //      state.map((item) => {
+        //         if (item.id === action.payload) 
+        //         return  item.completed = !(item.completed)
+        //     })
 
         default :
             return state
